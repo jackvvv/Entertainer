@@ -55,6 +55,8 @@ import sinia.com.entertainer.utils.Constants;
 import sinia.com.entertainer.utils.MyApplication;
 import sinia.com.entertainer.utils.Utils;
 
+import static android.R.attr.width;
+
 
 /**
  * 发布动态界面
@@ -282,51 +284,55 @@ public class DynamicActivity extends BaseActivity implements View.OnClickListene
                     }
                     break;
             }
-        }
-        if (requestCode == 666) {
-            //显示
-            img_addphoto.setVisibility(View.GONE);
-            img_addvideo.setVisibility(View.GONE);
-            img_no.setVisibility(View.GONE);
-            mygv.setVisibility(View.GONE);
-            rl_video.setVisibility(View.VISIBLE);
-            Uri uri = data.getData();
-            File file = getFileByUri(uri);
-            MediaMetadataRetriever mmr = new MediaMetadataRetriever();//实例化MediaMetadataRetriever对象
-            try {
-                mmr.setDataSource(file.getAbsolutePath());
-            } catch (Exception e) {
-                Log.e("tag", "e=" + e.toString());
-            }
 
-            bitmap = mmr.getFrameAtTime();//获得视频第一帧的Bitmap对象
-            String duration = mmr.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_DURATION);//时长(毫秒)
-            int int_duration = Integer.parseInt(duration);
-            if (int_duration > 60000) {
-                Toast.makeText(getApplicationContext(), "视频时长超过60秒请重新选择", Toast.LENGTH_SHORT).show();
-            }
-            img_video.setImageBitmap(bitmap);
-        }
-        if (requestCode == 777) {
-            //显示
-            img_addphoto.setVisibility(View.GONE);
-            img_addvideo.setVisibility(View.GONE);
-            img_no.setVisibility(View.GONE);
-            mygv.setVisibility(View.GONE);
-            rl_video.setVisibility(View.VISIBLE);
-            Uri uri = data.getData();
-            Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
-            if (cursor != null && cursor.moveToNext()) {
-                int id = cursor.getInt(cursor.getColumnIndex(VideoColumns._ID));
-                String filePath = cursor.getString(cursor.getColumnIndex(VideoColumns.DATA));
-                //bitmap = Thumbnails.getThumbnail(getContentResolver(), id, Thumbnails.MICRO_KIND, null);
-                // ThumbnailUtils类2.2以上可用
-                bitmap = ThumbnailUtils.createVideoThumbnail(filePath,
-                        Thumbnails.MICRO_KIND);
+            if (requestCode == 666) {
+                //显示
+                img_addphoto.setVisibility(View.GONE);
+                img_addvideo.setVisibility(View.GONE);
+                img_no.setVisibility(View.GONE);
+                mygv.setVisibility(View.GONE);
+                rl_video.setVisibility(View.VISIBLE);
+                Uri uri = data.getData();
+                File file = getFileByUri(uri);
+                MediaMetadataRetriever mmr = new MediaMetadataRetriever();//实例化MediaMetadataRetriever对象
+                try {
+//                mmr.setDataSource(file.getAbsolutePath());
+                    mmr.setDataSource(DynamicActivity.this, uri);
+                } catch (Exception e) {
+                    Log.e("tag", "e=" + e.toString());
+                }
+
+                bitmap = mmr.getFrameAtTime(-1);//获得视频第一帧的Bitmap对象
+                String duration = mmr.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_DURATION);
+                //时长(毫秒)
+                int int_duration = Integer.parseInt(duration);
+                if (int_duration > 60000) {
+                    Toast.makeText(getApplicationContext(), "视频时长超过60秒请重新选择", Toast.LENGTH_SHORT).show();
+                }
+                bitmap = Bitmap.createScaledBitmap(bitmap, 80, 80, true);
                 img_video.setImageBitmap(bitmap);
-                Log.e("tag", "filepath==" + filePath);
-                File file = new File(filePath);
-                cursor.close();
+            }
+            if (requestCode == 777) {
+                //显示
+                img_addphoto.setVisibility(View.GONE);
+                img_addvideo.setVisibility(View.GONE);
+                img_no.setVisibility(View.GONE);
+                mygv.setVisibility(View.GONE);
+                rl_video.setVisibility(View.VISIBLE);
+                Uri uri = data.getData();
+                Cursor cursor = this.getContentResolver().query(uri, null, null, null, null);
+                if (cursor != null && cursor.moveToNext()) {
+                    int id = cursor.getInt(cursor.getColumnIndex(VideoColumns._ID));
+                    String filePath = cursor.getString(cursor.getColumnIndex(VideoColumns.DATA));
+                    //bitmap = Thumbnails.getThumbnail(getContentResolver(), id, Thumbnails.MICRO_KIND, null);
+                    // ThumbnailUtils类2.2以上可用
+                    bitmap = ThumbnailUtils.createVideoThumbnail(filePath,
+                            Thumbnails.MICRO_KIND);
+                    img_video.setImageBitmap(bitmap);
+                    Log.e("tag", "filepath==" + filePath);
+                    File file = new File(filePath);
+                    cursor.close();
+                }
             }
         }
     }
@@ -385,8 +391,8 @@ public class DynamicActivity extends BaseActivity implements View.OnClickListene
                             public void onClick(int which) {
                                 //拍摄;
                                 Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-                                intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);
-                                intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 6);
+                                intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
+                                intent.putExtra(MediaStore.EXTRA_DURATION_LIMIT, 60);
 
                                 startActivityForResult(intent, 777);
                             }

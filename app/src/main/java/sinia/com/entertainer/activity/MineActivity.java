@@ -315,7 +315,7 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
                 tv_work.setTextColor(Color.parseColor("#313131"));
                 view_3.setBackgroundColor(Color.parseColor("#ffffff"));
                 listview.setVisibility(View.VISIBLE);
-                sv.scrollTo(0, 0);
+//                sv.scrollTo(0, 0);
                 ll_person.setVisibility(View.GONE);
                 gridview.setVisibility(View.GONE);
                 break;
@@ -327,7 +327,7 @@ public class MineActivity extends BaseActivity implements View.OnClickListener {
                 tv_work.setTextColor(Color.parseColor("#d73232"));
                 view_3.setBackgroundColor(Color.parseColor("#d73232"));
                 gridview.setVisibility(View.VISIBLE);
-                sv.scrollTo(0, 0);
+//                sv.scrollTo(0, 0);
                 ll_person.setVisibility(View.GONE);
                 listview.setVisibility(View.GONE);
                 break;

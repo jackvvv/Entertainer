@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <sinia.com.entertainer.view.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/jhead" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_head"
+            android:layout_toEndOf="@+id/img_head"
+            android:layout_toRightOf="@+id/img_head"
+            android:text="name"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:id="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_head"
+            android:layout_toEndOf="@+id/img_head"
+            android:layout_toRightOf="@+id/img_head"
+            android:text="12月13日"
+            android:textColor="#9f9f9f"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_con"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time"
+            android:layout_toEndOf="@+id/img_head"
+            android:layout_toRightOf="@+id/img_head"
+            android:paddingBottom="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:text="不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错不错"
+            android:textColor="#313131"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

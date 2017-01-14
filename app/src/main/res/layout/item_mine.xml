@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/lay_sharp8"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="盗墓笔记2剧组招演员和主题曲歌手"
+                android:textColor="#313131"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:text="2小时前发布"
+                android:textColor="#b6b6b6"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_job1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/lay_sharp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="演员"
+                android:textColor="#b6b6b6"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_job2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/tv_job1"
+                android:layout_toRightOf="@+id/tv_job1"
+                android:background="@drawable/lay_sharp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="歌手"
+                android:textColor="#b6b6b6"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/tv_job2"
+                android:layout_toRightOf="@+id/tv_job2"
+                android:background="@drawable/lay_sharp10"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="不限男女"
+                android:textColor="@color/mainColor"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_allnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_job1"
+                android:padding="10dp"
+                android:text="已接受200人"
+                android:textColor="#b6b6b6"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_allnum"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/mtime"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:text="截止日期:"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_endtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_allnum"
+                android:layout_toEndOf="@+id/textView3"
+                android:layout_toRightOf="@+id/textView3"
+                android:paddingLeft="10dp"
+                android:text="2016-12-9"
+                android:textColor="@color/red"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_allnum"
+                android:layout_marginLeft="20dp"
+                android:layout_toEndOf="@+id/tv_endtime"
+                android:layout_toRightOf="@+id/tv_endtime"
+                android:drawableLeft="@drawable/mlioc"
+                android:drawablePadding="5dp"
+                android:text="南京市"
+                android:textColor="#b6b6b6"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_allnum"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:text="报名人数"
+                android:textColor="#313131"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textView4"
+                android:layout_alignEnd="@+id/textView4"
+                android:layout_alignRight="@+id/textView4"
+                android:layout_margin="5dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="66"
+                android:textColor="#313131"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#e2e2e2"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="待处理"
+                android:textColor="#b6b6b6"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/lay_sharp11"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="关闭场所"
+                android:textColor="@color/red"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

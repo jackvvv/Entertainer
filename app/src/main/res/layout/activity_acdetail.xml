@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <sinia.com.entertainer.view.MyScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_btn"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_bg"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/moren1"></ImageView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="215dp"
+                android:background="@drawable/lay_sharp14"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_fabu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:text="发布人:"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_fabu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/tv_fabu"
+                        android:layout_toRightOf="@+id/tv_fabu"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/img_realname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toEndOf="@+id/tv_name"
+                        android:layout_toRightOf="@+id/tv_name"
+                        android:src="@drawable/orenzheng" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/atime"
+                        android:drawablePadding="5dp"
+                        android:text="发布时间"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_outtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:text="截止时间"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_overtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/aloc"
+                        android:drawablePadding="5dp"
+                        android:text="工作地点:"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_loc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#313131"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/asex"
+                        android:drawablePadding="5dp"
+                        android:text="性别:"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#313131"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@drawable/acaiyi"
+                        android:drawablePadding="5dp"
+                        android:text="才艺:"
+                        android:textColor="#c7c7c7"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_caiyi1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lay_sharp3"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:textColor="#313131"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_caiyi2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/lay_sharp3"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:textColor="#313131"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/bgColor"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_hasjoin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:drawableLeft="@drawable/ahasin"
+                            android:drawablePadding="5dp"
+                            android:padding="10dp"
+                            android:text="已报名"
+                            android:textColor="#c7c7c7"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_innum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:drawablePadding="5dp"
+                            android:drawableRight="@drawable/right"
+                            android:text="999人"
+                            android:textColor="#c7c7c7"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="horizontal">
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_1"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_2"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_3"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_4"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_5"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_6"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                        <sinia.com.entertainer.view.CircleImageView
+                            android:id="@+id/img_7"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/moren"
+                            android:visibility="invisible" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/bgColor"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/acon"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="通告简介"
+                    android:textColor="#c7c7c7"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="2000年发行首张个人专辑《Jay》。2001年发行的专辑《范特西》奠定其融合中西方音乐的风格[1]  。2002年举行“The One”世界巡回演唱会[2]  。2003年成为美国《时代周刊》封面人物[3-4]  。2004年获得世界音乐大奖中国区最畅销艺人奖[5]  。2005年凭借动作片《头文字D》获得台湾电影金马奖、香港电影金像奖最佳新人奖[6]  。2006年起连续三年获得世界音乐大奖中国区最畅销艺人奖[7]  。2007年自编自导的文艺片《不能说的秘密》获得台湾电影金马奖年度台湾杰出电影奖[8]  "
+                    android:textColor="#313131"
+                    android:textSize="12sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/bgColor"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/apic"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="宣传图片"
+                    android:textColor="#c7c7c7"
+                    android:textSize="12sp" />
+
+
+                <sinia.com.entertainer.view.MyGridView
+                    android:id="@+id/mgv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"></sinia.com.entertainer.view.MyGridView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/bgColor"></View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@drawable/aplay"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:text="宣传视频"
+                    android:textColor="#c7c7c7"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:id="@+id/img_video"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/jhead" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_rl"
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="174dp">
+
+                <ImageView
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/wcbg" />
+
+                <sinia.com.entertainer.view.CircleImageView
+                    android:id="@+id/img_head"
+                    android:layout_width="81dp"
+                    android:layout_height="81dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/moren" />
+
+                <ImageView
+                    android:id="@+id/img_redv"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@+id/img_head"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/img_head"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/radvc" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </sinia.com.entertainer.view.MyScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@drawable/wback" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:text="周杰伦"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+
+        <ImageView
+            android:id="@+id/img_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:scaleType="center"
+            android:src="@drawable/share" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/title"
+            android:background="@color/bgColor"
+            android:visibility="invisible"></View>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btnbg">
+
+        <TextView
+            android:id="@+id/tv_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/acjoin"
+            android:padding="10dp"
+            android:text="我要报名"
+            android:textColor="@color/mainColor"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

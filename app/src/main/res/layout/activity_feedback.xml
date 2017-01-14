@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/lay_sharp8"
+        android:gravity="left|top"
+        android:hint="请写出你对本app的建议或者意见，我们将不断地改进！"
+        android:lines="6"
+        android:padding="10dp"
+        android:textColor="#313131"
+        android:textColorHint="#c6c6c6"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/lay_sharp2"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="提交"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="10dp"
+        android:text="歌曲：告白气球"
+        android:textColor="#707070"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_good"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.5dp"
+        android:background="#fff"
+        android:drawableLeft="@drawable/mrgood"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="点赞歌曲"
+        android:textColor="#313131"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.5dp"
+        android:background="#fff"
+        android:drawableLeft="@drawable/mrdelete"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="删除"
+        android:textColor="#313131"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tv_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.5dp"
+        android:background="#fff"
+        android:drawableLeft="@drawable/mrdownload"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="下载"
+        android:textColor="#313131"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/tv_dis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0.5dp"
+        android:background="#fff"
+        android:drawableLeft="@drawable/grdis"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="评论"
+        android:textColor="#313131"
+        android:textSize="16sp" />
+</LinearLayout>

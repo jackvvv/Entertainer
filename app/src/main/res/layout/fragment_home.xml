@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#fff">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#fff"
+            android:gravity="center"
+            android:text="演艺圈"
+            android:textColor="#313131"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:padding="10dp"
+            android:src="@drawable/searchb" />
+
+        <View
+            android:background="@color/bgColor"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"></View>
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <sinia.com.entertainer.view.slideview.SlideShowView
+                android:id="@+id/mslv"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/view"
+                        android:layout_toStartOf="@+id/view"
+                        android:src="@drawable/action" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/view"
+                        android:layout_toRightOf="@+id/view"
+                        android:text="接演出"
+                        android:textColor="#313131"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_actor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/view1"
+                        android:layout_toStartOf="@+id/view1"
+                        android:src="@drawable/actor" />
+
+                    <View
+                        android:id="@+id/view1"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"></View>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toEndOf="@+id/view1"
+                        android:layout_toRightOf="@+id/view1"
+                        android:text="招演员"
+                        android:textColor="#313131"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/bgColor">
+
+                <TextView
+                    android:id="@+id/tv_music"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharpright"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@drawable/music"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="音乐资料"
+                    android:textColor="#313131"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_video"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharpleft"
+                    android:drawablePadding="7dp"
+                    android:drawableTop="@drawable/video"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="视频资料"
+                    android:textColor="#313131"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#fff"
+                android:drawableLeft="@drawable/left1"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="演艺新星"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/bgColor"></View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_al"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_a1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_aname1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_a1"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name1"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_a2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_a2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_aname2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_a2"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name2"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_a3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_a3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_aname3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_a3"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name3"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_a4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_a4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_aname4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_a4"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name4"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_a5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_a5"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_aname5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_a5"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name5"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#fff"
+                android:drawableLeft="@drawable/left2"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:text="焦点场所"
+                android:textColor="@color/mainColor"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/bgColor"></View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_locl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_loc1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_lname1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_loc1"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name1"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_loc2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_loc2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_lname2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_loc2"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name2"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_loc3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_loc3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_lname3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_loc3"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name3"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_loc4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_loc4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_lname4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_loc4"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name4"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_loc5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="invisible">
+
+                    <sinia.com.entertainer.view.CircleImageView
+                        android:id="@+id/img_loc5"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/jhead" />
+
+                    <TextView
+                        android:id="@+id/tv_lname5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_loc5"
+                        android:layout_centerHorizontal="true"
+                        android:padding="5dp"
+                        android:text="name5"
+                        android:textColor="#313131"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/hotpoint"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/hotpoint"
+                android:padding="10dp"
+                android:text="热点广场"
+                android:textColor="#313131"
+                android:textSize="16sp" />
+
+            <sinia.com.entertainer.view.MyGridView
+                android:id="@+id/mgv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/bgColor"
+                android:horizontalSpacing="10dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp"></sinia.com.entertainer.view.MyGridView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

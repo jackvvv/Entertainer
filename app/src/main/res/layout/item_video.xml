@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <sinia.com.entertainer.view.RoundRectImageView
+            android:id="@+id/img_logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/moren1" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_logo"
+            android:layout_toEndOf="@+id/img_logo"
+            android:layout_toRightOf="@+id/img_logo"
+            android:text=""
+            android:textColor="#313131"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_logo"
+            android:layout_toEndOf="@+id/img_logo"
+            android:layout_toRightOf="@+id/img_logo"
+            android:text=""
+            android:textColor="#9e9e9e"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tv_time"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/img_logo"
+            android:layout_toRightOf="@+id/img_logo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingRight="10dp"
+            android:text=""
+            android:textColor="#626262"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_dis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_logo"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/vdis"
+            android:drawablePadding="10dp"
+            android:text=""
+            android:textColor="#9e9e9e"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_dis"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/tv_dis"
+            android:layout_toStartOf="@+id/tv_dis"
+            android:drawableLeft="@drawable/vcount"
+            android:drawablePadding="10dp"
+            android:text=""
+            android:textColor="#9e9e9e"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+</LinearLayout>

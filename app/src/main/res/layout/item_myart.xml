@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_mine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff">
+
+        <sinia.com.entertainer.view.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/jhead" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_head"
+            android:layout_toEndOf="@+id/img_head"
+            android:layout_toRightOf="@+id/img_head"
+            android:text="jay"
+            android:textColor="#d73232"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_job1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_head"
+            android:layout_alignLeft="@+id/tv_name"
+            android:layout_alignStart="@+id/tv_name"
+            android:background="@drawable/lay_sharp5"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="演员"
+            android:textColor="#a6a6a6"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_job2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_job1"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/tv_job1"
+            android:layout_toRightOf="@+id/tv_job1"
+            android:background="@drawable/lay_sharp5"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="歌手"
+            android:textColor="#a6a6a6"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@color/bgColor"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:background="#fff"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_con"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:padding="10dp"
+                android:text="1997年9月，周杰伦在父亲的鼓励下报名参加了台北星光电视台的娱乐节目《超级新人王》，并在节目中邀人演唱了自己创作的歌曲《梦有翅膀》。当主持人吴宗宪看到这首歌曲的曲谱后，就邀请周杰伦到阿尔发音乐公司担任音乐助理[25]  。1998年，他创作了歌曲《眼泪知道》，在公司把这首歌曲给刘德华以后却被退歌；而他为张惠妹创作的歌曲《双截棍》也被退回[27]  。"
+                android:textColor="#313131" />
+
+            <sinia.com.entertainer.view.MyGridView
+                android:id="@+id/mgv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#fff"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:verticalSpacing="5dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <sinia.com.entertainer.view.MyListView
+        android:id="@+id/mlv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="65dp"
+        android:background="#fff"
+        android:divider="#fff"
+        android:dividerHeight="0dp"
+        android:scrollbars="none"></sinia.com.entertainer.view.MyListView>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <RelativeLayout
+            android:id="@+id/rl_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <sinia.com.entertainer.view.CircleImageView
+                android:id="@+id/img_head"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/moren" />
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/img_redv"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/radvc" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/rl_img"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/rl_img"
+            android:layout_toRightOf="@+id/rl_img"
+            android:text=""
+            android:textColor="#313131"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_job1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_img"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/rl_img"
+            android:layout_toRightOf="@+id/rl_img"
+            android:background="@drawable/lay_sharp5"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text=""
+            android:textColor="#d0d0d3"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_job2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_img"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/tv_job1"
+            android:layout_toRightOf="@+id/tv_job1"
+            android:background="@drawable/lay_sharp5"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text=""
+            android:textColor="#d0d0d3"
+            android:textSize="12sp"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+</LinearLayout>

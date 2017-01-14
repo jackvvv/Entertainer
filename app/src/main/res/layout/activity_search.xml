@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:paddingBottom="5dp"
+        android:paddingTop="30dp">
+
+        <TextView
+            android:id="@+id/tv_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/rdown"
+            android:padding="10dp"
+            android:text="演员"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_choice"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/tv_chanel"
+            android:layout_toRightOf="@+id/tv_choice"
+            android:background="@drawable/lay_sharp5">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:src="@drawable/wsearch" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img"
+                android:background="@drawable/lay_sharp5"
+                android:hint="搜索"
+                android:padding="7dp"
+                android:textColor="#313131"
+                android:textColorHint="#dadada"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_chanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv_choice"
+            android:padding="10dp"
+            android:text="取消"
+            android:textColor="#313131"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bgColor"></View>
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="热门搜索"
+            android:textColor="#d3d3d3" />
+
+        <GridView
+            android:id="@+id/hotgv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="5"
+            android:scrollbars="none"
+            android:verticalSpacing="10dp"></GridView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/bgColor"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="历史记录"
+                android:textColor="#d3d3d3" />
+
+            <ImageView
+                android:id="@+id/img_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:src="@drawable/delete" />
+        </RelativeLayout>
+
+
+        <GridView
+            android:id="@+id/hisgv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:horizontalSpacing="10dp"
+            android:numColumns="5"
+            android:scrollbars="none"
+            android:verticalSpacing="10dp"></GridView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/mlistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/bgColor"
+        android:dividerHeight="10dp"
+        android:scrollbars="none"
+        android:visibility="gone"></ListView>
+</LinearLayout>

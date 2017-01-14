@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+    <sinia.com.entertainer.view.slideview.SlideShowView1
+        android:id="@+id/ssv"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_male"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="男伴奏"
+                android:textColor="@color/mainColor"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="70dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_male"
+                android:layout_centerHorizontal="true"
+                android:background="@color/mainColor" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#cacaca"></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_female"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="女伴奏"
+                android:textColor="#313131"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="70dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_female"
+                android:layout_centerHorizontal="true"
+                android:background="#fff" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#cacaca"></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_other"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="其他"
+                android:textColor="#313131"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="70dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_other"
+                android:layout_centerHorizontal="true"
+                android:background="#fff" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#cacaca"></View>
+
+        <RelativeLayout
+            android:id="@+id/rl_original"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_original"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="原创"
+                android:textColor="#313131"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="70dp"
+                android:layout_height="1dp"
+                android:layout_below="@+id/tv_original"
+                android:layout_centerHorizontal="true"
+                android:background="#fff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

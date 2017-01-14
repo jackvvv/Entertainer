@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <sinia.com.entertainer.view.RoundRectImageView
+            android:id="@+id/img_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/jhead" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_img"
+            android:layout_toEndOf="@+id/img_img"
+            android:layout_toRightOf="@+id/img_img"
+            android:text="金色大厅(演员招募)"
+            android:textColor="#313131" />
+
+        <TextView
+            android:id="@+id/tv_job1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_title"
+            android:layout_alignStart="@+id/tv_title"
+            android:layout_centerVertical="true"
+            android:background="@drawable/lay_sharp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="演员"
+            android:textColor="#d6d6d6"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_job2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_job1"
+            android:background="@drawable/lay_sharp"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="歌手"
+            android:textColor="#d6d6d6"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/img_img"
+            android:layout_toEndOf="@+id/img_img"
+            android:layout_toRightOf="@+id/img_img"
+            android:text="南京"
+            android:textColor="#d6d6d6"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bgColor"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <sinia.com.entertainer.view.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/jhead" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_head"
+            android:layout_toRightOf="@+id/img_head"
+            android:text="周杰伦"
+            android:textColor="#313131"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/img_renzheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/tv_name"
+            android:layout_toRightOf="@+id/tv_name"
+            android:src="@drawable/yrenzheng" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="2016-12-2 17:00:00"
+            android:textColor="#d6d6d6"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

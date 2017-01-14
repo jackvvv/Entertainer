@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="演员类"
+                android:textColor="#313131"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_host"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="主持/司仪"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_msing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="男歌手"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_fsing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="女歌手"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_ds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="舞蹈/DS"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_team"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="乐队/乐器"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="模特/礼仪"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_magic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="魔术/杂技"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_beauty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="反串/艳星"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_joker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="二人转/搞笑"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_kongfu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="绝活/武术"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_dj"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="DJ/灯光"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_other"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="其他嘉宾"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_edit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="舞编小品"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="#313131"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="#313131"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:text="企业类"
+                android:textColor="#313131"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_night"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="夜会场所"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_manager"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="经理总监"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_campany"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="经纪公司/人"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_marry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="婚庆公司"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_culture"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="文化传播"
+                    android:textColor="#313131"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/lay_sharp3"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text=""
+                    android:textColor="#313131"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

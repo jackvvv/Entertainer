@@ -1,5 +1,6 @@
 package sinia.com.entertainer.activity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -35,10 +36,13 @@ import sinia.com.entertainer.adapter.MyWorkAdapter;
 import sinia.com.entertainer.base.BaseActivity;
 import sinia.com.entertainer.base.JsonBean;
 import sinia.com.entertainer.bean.PersonInfBean;
+import sinia.com.entertainer.chat.ChatActivity;
 import sinia.com.entertainer.utils.Constants;
 import sinia.com.entertainer.utils.MyApplication;
 import sinia.com.entertainer.utils.Utils;
 import sinia.com.entertainer.view.MyScrollView;
+
+import static sinia.com.entertainer.utils.MyApplication.context;
 
 /**
  * 详细资料
@@ -84,9 +88,9 @@ public class DetailedInformationActivity extends BaseActivity implements View.On
     //获取个人信息
     private void getInf() {
         RequestParams params = new RequestParams();
-        params.put("userId", did);
+        params.put("userId", userId);
         params.put("type", "1");
-        params.put("beUserId", userId);
+        params.put("beUserId", did);
         Log.i("tag", Constants.BASE_URL + "personInfo&" + params);
         client.setTimeout(40 * 1000);
         client.post(Constants.BASE_URL + "personInfo", params, new AsyncHttpResponseHandler() {
@@ -350,7 +354,12 @@ public class DetailedInformationActivity extends BaseActivity implements View.On
                 gridview.setVisibility(View.VISIBLE);
                 break;
             case R.id.tv_btn1:
-
+                String userId = bean.getTelephone();
+                String username = bean.getUserName();
+                Intent intent = new Intent(this, ChatActivity.class);
+                intent.putExtra("userId", userId);
+                intent.putExtra("username", username);
+                startActivity(intent);
                 break;
             case R.id.tv_btn2:
                 if (type.equals("2")) {

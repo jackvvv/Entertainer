@@ -12,6 +12,15 @@ public class ContentDetailBean implements Serializable {
     private String imageUrl;//头像，
     private String profession;//-角色
     private String vConfirm;//vip认证
+    private String telephone;
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public String getvConfirm() {
         return vConfirm;

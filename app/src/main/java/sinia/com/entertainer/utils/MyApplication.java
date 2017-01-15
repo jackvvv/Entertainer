@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.baidu.platform.comapi.map.D;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.chat.EMOptions;
+
+import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.bean.LoginBean;
 
 
@@ -26,8 +31,8 @@ public class MyApplication extends Application {
         context = this.getApplicationContext();
         instance = this;
         initShareKey();
-
-
+        //环信初始化
+        DemoHelper.getInstance().init(getApplicationContext());
     }
 
     private void initShareKey() {

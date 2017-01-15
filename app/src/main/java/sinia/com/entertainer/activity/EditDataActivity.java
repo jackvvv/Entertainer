@@ -21,10 +21,13 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -43,6 +46,7 @@ import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.R;
 import sinia.com.entertainer.actionsheetdialog.ActionSheetDialog;
 import sinia.com.entertainer.base.BaseActivity;
@@ -120,7 +124,6 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
     private String brith;//生日
     private String imgurl = "-1";//头像
     private String imgPath, dateTime;
-    private String imgUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -193,6 +196,7 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
             sign = bean.getIntroduction();
             tv_introduce.setText("");
         }
+
     }
 
     //获取个人信息
@@ -274,11 +278,65 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
                     int isSuccessful = bean.getIsSuccessful();
                     if (state == 0 && isSuccessful == 0) {
                         showToast("保存成功");
-                        finish();
+                        uploadUserAvatar(imgurl);
+                        updateRemoteNick(name);
                     }
                 }
             }
         });
+    }
+
+    private void updateRemoteNick(final String name) {
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                boolean updatenick = DemoHelper.getInstance().getUserProfileManager().updateCurrentUserNickName(name);
+                if (EditDataActivity.this.isFinishing()) {
+                    return;
+                }
+                if (!updatenick) {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+//                            showToast("昵称信息更新成功");
+                        }
+                    });
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+//                            showToast("昵称信息更新失败");
+                        }
+                    });
+                }
+            }
+        }).start();
+    }
+
+    private void uploadUserAvatar(final String imgurl) {
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                if (EditDataActivity.this.isFinishing()) {
+                    return;
+                }
+                final String avatarUrl = DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(bean.getImageUrl()
+                        .getBytes());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (avatarUrl != null) {
+//                            showToast("头像信息更新成功");
+                        } else {
+//                            showToast("头像信息更新失败");
+                        }
+                        finish();
+                    }
+                });
+
+            }
+        }).start();
     }
 
     private void initView() {

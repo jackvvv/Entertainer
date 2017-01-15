@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -30,4 +31,7 @@ dependencies {
     compile files('libs/android-async-http-1.4.3.jar')
     compile project(':InitActivity')
     compile project(':library')
+    compile project(':easeui')
+    compile files('libs/parse-android-1.13.0.jar')
+    compile files('libs/bolts-tasks-1.4.0.jar')
 }

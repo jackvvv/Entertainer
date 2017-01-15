@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
@@ -22,6 +23,7 @@ import sinia.com.entertainer.base.BaseActivity;
 import sinia.com.entertainer.base.JsonBean;
 import sinia.com.entertainer.bean.ContentBean;
 import sinia.com.entertainer.bean.ContentTypeBean;
+import sinia.com.entertainer.chat.ChatActivity;
 import sinia.com.entertainer.utils.ActivityManager;
 import sinia.com.entertainer.utils.Constants;
 import sinia.com.entertainer.utils.MyApplication;

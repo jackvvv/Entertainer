@@ -27,8 +27,7 @@ import sinia.com.entertainer.view.loadingview.LoadingView;
 /**
  *
  */
-public class
-BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     private LinearLayout headParent;
 
     private LinearLayout bodyParent;

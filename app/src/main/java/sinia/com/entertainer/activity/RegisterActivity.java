@@ -9,13 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.hyphenate.EMError;
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import butterknife.Bind;
+import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.R;
 import sinia.com.entertainer.actionsheetdialog.ActionSheetDialogUtils;
 import sinia.com.entertainer.base.BaseActivity;
@@ -127,8 +132,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     int state = bean.getState();
                     int isSuccessful = bean.getIsSuccessful();
                     if (0 == state && 0 == isSuccessful) {
-                        showToast("注册成功");
-                        finish();
+//                        showToast("注册成功");
+                        emRegister(phone);
+//                        finish();
                     }
                     if (0 == state && 1 == isSuccessful) {
                         showToast("您的手机号已经注册过了");
@@ -139,6 +145,48 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 }
             }
         });
+    }
+
+    private void emRegister(final String phone) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    EMClient.getInstance().createAccount(phone, "111111");
+                    DemoHelper.getInstance().setCurrentUserName(phone);
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            Toast.makeText(getApplicationContext(), "注册成功",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    finish();
+                } catch (final HyphenateException e) {
+                    runOnUiThread(new Runnable() {
+                        public void run() {
+                            int errorCode = e.getErrorCode();
+                            if (errorCode == EMError.NETWORK_ERROR) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(R.string
+                                        .network_anomalies), Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.USER_ALREADY_EXIST) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(R.string
+                                        .User_already_exists), Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.USER_AUTHENTICATION_FAILED) {
+                                Toast.makeText(getApplicationContext(), "registration_failed_without_permission",
+                                        Toast.LENGTH_SHORT).show();
+                            } else if (errorCode == EMError.USER_ILLEGAL_ARGUMENT) {
+                                Toast.makeText(getApplicationContext(), getResources().getString(R.string
+                                        .illegal_user_name), Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Registration_failed", Toast.LENGTH_SHORT)
+                                        .show();
+                            }
+                        }
+                    });
+                }
+            }
+        }).start();
     }
 
     private void getCode(String str) {
@@ -164,7 +212,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         showToast("验证码获取失败");
                     } else {
                         gcode = bean.getValidateCode();
-                        showToast("验证码已发送");
+                        showToast("验证码已发送---" + gcode);
                         tv_getcode.setClickable(false);
                         tv_getcode.setText("重新发送(" + i + ")");
                         new Thread(new Runnable() {

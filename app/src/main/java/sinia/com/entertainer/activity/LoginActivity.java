@@ -1,26 +1,35 @@
 package sinia.com.entertainer.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.baidu.platform.comapi.map.M;
 import com.google.gson.Gson;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import butterknife.Bind;
+import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.R;
 import sinia.com.entertainer.base.BaseActivity;
 import sinia.com.entertainer.bean.LoginBean;
 import sinia.com.entertainer.bean.PersonInfBean;
 import sinia.com.entertainer.bean.UserIdBean;
+import sinia.com.entertainer.db.DemoDBManager;
 import sinia.com.entertainer.utils.ActivityManager;
 import sinia.com.entertainer.utils.MyApplication;
 import sinia.com.entertainer.utils.Constants;
+import sinia.com.entertainer.utils.PreferenceManager;
+import sinia.com.entertainer.utils.SharedPreferencesUtils;
 import sinia.com.entertainer.utils.Utils;
 
 /**
@@ -115,6 +124,60 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         });
     }
 
+    private void emLogin(final String phone) {
+        // After logout，the DemoDB may still be accessed due to async callback, so the DemoDB will be re-opened again.
+        // close it before login to make sure DemoDB not overlap
+        DemoDBManager.getInstance().closeDB();
+        // reset current user name before login
+        DemoHelper.getInstance().setCurrentUserName(phone);
+
+        EMClient.getInstance().login(phone, "111111", new EMCallBack() {
+            @Override
+            public void onSuccess() {
+                // ** manually load all local groups and conversation
+                EMClient.getInstance().groupManager().loadAllGroups();
+                EMClient.getInstance().chatManager().loadAllConversations();
+
+                // update current user's display name for APNs
+                boolean updatenick = EMClient.getInstance().pushManager().updatePushNickname(
+                        phone);
+                if (!updatenick) {
+                    Log.e("LoginActivity", "update current user nick fail");
+                }
+                // 异步获取当前用户的昵称和头像(从自己服务器获取，demo使用的一个第三方服务)
+                DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo(HXusername,HXheadImage);
+//                PreferenceManager.getInstance().setCurrentUserNick(phone);
+                DemoHelper.getInstance().getUserProfileManager().updateCurrentUserNickName(HXusername);
+                DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(HXheadImage.getBytes());
+                DemoHelper.getInstance().setCurrentUserName(phone); // 环信Id
+
+                SharedPreferencesUtils.putShareValue(LoginActivity.this, "name", HXusername);
+                SharedPreferencesUtils.putShareValue(LoginActivity.this, "logoUrl", HXheadImage);
+
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        Toast.makeText(getApplicationContext(), "登录成功",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+                finish();
+            }
+
+            @Override
+            public void onError(int i, String s) {
+                Toast.makeText(getApplicationContext(), getString(R.string.Login_failed) + s,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onProgress(int i, String s) {
+                showToast(i + "-------" + s);
+            }
+        });
+    }
+
+    private String HXusername, HXheadImage;//环信昵称,头像
+
     private void getInf(final String id) {
         RequestParams params = new RequestParams();
         params.put("userId", id);
@@ -137,6 +200,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         MyApplication.getInstance().setBooleanValue(
                                 "is_login", true);
                         LoginBean lb = new LoginBean();
+
+                        HXheadImage = bean.getImageUrl();
+                        HXusername = bean.getUserName();
+
                         lb.setUserId(id);//用户id
                         lb.setAddress(bean.getAddress());//地址
                         lb.setBirth(bean.getBirth());//生日
@@ -152,8 +219,14 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         lb.setWeight(bean.getWeight());//体重
                         lb.setPhone(bean.getTelephone());//手机号
                         MyApplication.getInstance().setLoginBean(lb);
-                        showToast("登录成功");
-                        finish();
+
+                        //登录环信
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                emLogin(phone);
+                            }
+                        }).start();
                     }
                 }
             }

@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.hyphenate.EMCallBack;
 
 import butterknife.Bind;
+import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.R;
 import sinia.com.entertainer.base.BaseActivity;
 import sinia.com.entertainer.utils.ActivityManager;
@@ -80,12 +84,31 @@ public class SetActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.tv_laytou:
-                MyApplication.getInstance().setBooleanValue(
-                        "is_login", false);
-                Intent data = new Intent();
-                setResult(666, data);
-                ActivityManager.getInstance().finishCurrentActivity();
-                showToast("退出成功");
+
+                DemoHelper.getInstance().logout(false, new EMCallBack() {
+
+                    @Override
+                    public void onSuccess() {
+                        runOnUiThread(new Runnable() {
+                            public void run() {
+                                MyApplication.getInstance().setBooleanValue(
+                                        "is_login", false);
+                                Intent data = new Intent();
+                                setResult(666, data);
+                                ActivityManager.getInstance().finishCurrentActivity();
+                                showToast("退出成功");
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onProgress(int progress, String status) {
+                    }
+
+                    @Override
+                    public void onError(int code, String message) {
+                    }
+                });
                 break;
         }
     }

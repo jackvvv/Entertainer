@@ -279,7 +279,7 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
                     if (state == 0 && isSuccessful == 0) {
                         showToast("保存成功");
                         uploadUserAvatar(imgurl);
-                        updateRemoteNick(name);
+//                        updateRemoteNick(name);
                     }
                 }
             }
@@ -321,8 +321,11 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
                 if (EditDataActivity.this.isFinishing()) {
                     return;
                 }
-                final String avatarUrl = DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(bean.getImageUrl()
-                        .getBytes());
+                final String avatarUrl = DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar
+                        (("http://ojlsvioci.bkt.clouddn.com/" + imgurl)
+                                .getBytes());
+                DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo(bean.getUserName(),
+                        ("http://ojlsvioci.bkt.clouddn.com/" + imgurl));
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

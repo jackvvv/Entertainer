@@ -148,7 +148,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo(HXusername,HXheadImage);
 //                PreferenceManager.getInstance().setCurrentUserNick(phone);
                 DemoHelper.getInstance().getUserProfileManager().updateCurrentUserNickName(HXusername);
-                DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(HXheadImage.getBytes());
+//                DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(HXheadImage.getBytes());
                 DemoHelper.getInstance().setCurrentUserName(phone); // 环信Id
 
                 SharedPreferencesUtils.putShareValue(LoginActivity.this, "name", HXusername);

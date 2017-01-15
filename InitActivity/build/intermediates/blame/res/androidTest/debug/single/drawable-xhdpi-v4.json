@@ -4,8 +4,20 @@
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_secondary_holo.9.png"
     },
     {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_primary_holo.9.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_primary_holo.9.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_secondary_holo.9.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_secondary_holo.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_primary_holo.9.png",
@@ -16,6 +28,10 @@
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_disabled_holo.png"
     },
     {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_control_normal_holo.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_normal_holo.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png",
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png"
     },
@@ -24,8 +40,24 @@
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_focused_holo.png"
     },
     {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_control_focused_holo.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_focused_holo.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_control_disabled_holo.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_disabled_holo.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mediacontroller_play.png",
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mediacontroller_play.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mediacontroller_play.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mediacontroller_play.png"
     },
     {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_control_normal_holo.png",
@@ -36,7 +68,15 @@
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_pressed_holo.png"
     },
     {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_control_pressed_holo.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_control_pressed_holo.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mediacontroller_pause.png",
         "source": "E:\\AndroidStudioProjects\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mediacontroller_pause.png"
+    },
+    {
+        "merged": "G:\\Entertainer\\InitActivity\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\mediacontroller_pause.png",
+        "source": "G:\\Entertainer\\InitActivity\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\mediacontroller_pause.png"
     }
 ]

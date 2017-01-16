@@ -1,8 +1,12 @@
 package sinia.com.entertainer.chat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import com.baidu.platform.comapi.map.B;
@@ -12,6 +16,7 @@ import com.hyphenate.util.EasyUtils;
 import sinia.com.entertainer.R;
 import sinia.com.entertainer.activity.MainActivity;
 import sinia.com.entertainer.base.BaseActivity;
+import sinia.com.entertainer.runtimepermissions.PermissionUtils;
 import sinia.com.entertainer.runtimepermissions.PermissionsManager;
 
 /**
@@ -36,6 +41,8 @@ public class ChatActivity extends BaseActivity {
         chatFragment.setArguments(getIntent().getExtras());
         getSupportFragmentManager().beginTransaction().add(R.id.container, chatFragment).commit();
 
+        PermissionUtils.requestMorePermission(this, new String[]{Manifest.permission.CAMERA, Manifest.permission
+                .RECORD_AUDIO,});
     }
 
     @Override

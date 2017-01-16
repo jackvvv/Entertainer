@@ -252,11 +252,11 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragmentHe
             message.setAttribute("em_robot_message", isRobot);
         }
         // 通过扩展属性，将userPic和userName发送出去。
-        String userPic = SharedPreferencesUtils.getShareString(getActivity(), "logoUrl", "");
+        String userPic = SharedPreferencesUtils.getShareString(getActivity(), "logoUrl");
         if (!TextUtils.isEmpty(userPic)) {
             message.setAttribute("userPic", userPic);
         }
-        String userName = SharedPreferencesUtils.getShareString(getActivity(), "name", "");
+        String userName = SharedPreferencesUtils.getShareString(getActivity(), "name");
         if (!TextUtils.isEmpty(userName)) {
             message.setAttribute("userName", userName);
         }

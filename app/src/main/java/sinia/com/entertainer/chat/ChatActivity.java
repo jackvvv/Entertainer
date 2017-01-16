@@ -29,7 +29,7 @@ public class ChatActivity extends BaseActivity {
         activityInstance = this;
         //get user id or group id
         toChatUsername = getIntent().getExtras().getString("userId");
-        nickName = getIntent().getExtras().getString("username");
+//        nickName = getIntent().getExtras().getString("username");
         //use EaseChatFratFragment
         chatFragment = new ChatFragment();
         //pass parameters to chat fragment
@@ -60,10 +60,11 @@ public class ChatActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         chatFragment.onBackPressed();
-        if (EasyUtils.isSingleActivity(this)) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
+        finish();
+//        if (EasyUtils.isSingleActivity(this)) {
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+//        }
     }
 
     public String getToChatUsername() {

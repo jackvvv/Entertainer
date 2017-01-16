@@ -16,9 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.hyphenate.chat.EMClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -356,6 +358,10 @@ public class DetailedInformationActivity extends BaseActivity implements View.On
             case R.id.tv_btn1:
                 String userId = bean.getTelephone();
                 String username = bean.getUserName();
+                if (userId.equals(EMClient.getInstance().getCurrentUser())) {
+                    Toast.makeText(context, "不能和自己聊天", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent intent = new Intent(this, ChatActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("username", username);

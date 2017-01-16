@@ -9,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,9 +25,12 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 
+import com.baidu.platform.comapi.map.E;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
+import com.hyphenate.EMValueCallBack;
 import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.domain.EaseUser;
 import com.hyphenate.easeui.utils.EaseUserUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -56,6 +60,7 @@ import sinia.com.entertainer.bean.TokenBean;
 import sinia.com.entertainer.utils.CacheUtils;
 import sinia.com.entertainer.utils.Constants;
 import sinia.com.entertainer.utils.MyApplication;
+import sinia.com.entertainer.utils.SharedPreferencesUtils;
 import sinia.com.entertainer.utils.Utils;
 import sinia.com.entertainer.utils.city.CityPicker;
 import sinia.com.entertainer.utils.time.TimePickerView;
@@ -197,6 +202,35 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
             tv_introduce.setText("");
         }
 
+        if (bean.getTelephone() != null) {
+            if (bean.getTelephone().equals(EMClient.getInstance().getCurrentUser())) {
+                EaseUserUtils.setUserNick(bean.getTelephone(), null);
+//                EaseUserUtils.setUserAvatar(this, bean.getTelephone(), null);
+            } else {
+                EaseUserUtils.setUserNick(bean.getTelephone(), null);
+//                EaseUserUtils.setUserAvatar(this, username, headAvatar);
+                asyncFetchUserInfo(bean.getTelephone());
+            }
+        }
+    }
+
+    public void asyncFetchUserInfo(String username) {
+        DemoHelper.getInstance().getUserProfileManager().asyncGetUserInfo(username, new EMValueCallBack<EaseUser>() {
+
+            @Override
+            public void onSuccess(EaseUser user) {
+                if (user != null) {
+                    DemoHelper.getInstance().saveContact(user);
+                    if (isFinishing()) {
+                        return;
+                    }
+                }
+            }
+
+            @Override
+            public void onError(int error, String errorMsg) {
+            }
+        });
     }
 
     //获取个人信息
@@ -286,33 +320,6 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
         });
     }
 
-    private void updateRemoteNick(final String name) {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                boolean updatenick = DemoHelper.getInstance().getUserProfileManager().updateCurrentUserNickName(name);
-                if (EditDataActivity.this.isFinishing()) {
-                    return;
-                }
-                if (!updatenick) {
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-//                            showToast("昵称信息更新成功");
-                        }
-                    });
-                } else {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-//                            showToast("昵称信息更新失败");
-                        }
-                    });
-                }
-            }
-        }).start();
-    }
-
     private void uploadUserAvatar(final String imgurl) {
         new Thread(new Runnable() {
 
@@ -326,6 +333,9 @@ public class EditDataActivity extends BaseActivity implements View.OnClickListen
                                 .getBytes());
                 DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo(bean.getUserName(),
                         ("http://ojlsvioci.bkt.clouddn.com/" + imgurl));
+                SharedPreferencesUtils.putShareValue(EditDataActivity.this, "name", name);
+                SharedPreferencesUtils.putShareValue(EditDataActivity.this, "logoUrl", ("http://ojlsvioci.bkt.clouddn" +
+                        ".com/" + imgurl));
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

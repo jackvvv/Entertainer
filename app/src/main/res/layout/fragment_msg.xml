@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:hyphenate="http://schemas.android.com/apk/res-auto"
     android:background="@color/bgColor"
     android:orientation="vertical">
 
@@ -35,21 +36,14 @@
         android:layout_height="0.5dp"
         android:background="@color/bgColor"></View>
 
-    <ScrollView
+    <sinia.com.entertainer.chat.EaseConversationList
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <sinia.com.entertainer.view.MyListView
-            android:id="@+id/mlistview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="0.5dp"
-            android:background="#fff"
-            android:divider="@color/bgColor"
-            android:dividerHeight="0.5dp"
-            android:scrollbars="none"></sinia.com.entertainer.view.MyListView>
-    </ScrollView>
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="#00000000"
+        android:divider="@null"
+        hyphenate:cvsListPrimaryTextSize="16sp" />
 
 
 </LinearLayout>

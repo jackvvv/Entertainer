@@ -12,6 +12,7 @@ import com.hyphenate.chat.EMOptions;
 
 import sinia.com.entertainer.DemoHelper;
 import sinia.com.entertainer.bean.LoginBean;
+import sinia.com.entertainer.runtimepermissions.PermissionsManager;
 
 
 /**

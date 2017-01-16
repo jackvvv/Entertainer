@@ -9,7 +9,12 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.easeui.controller.EaseUI;
+import com.hyphenate.easeui.domain.EaseUser;
 
 import java.util.List;
 
@@ -65,9 +70,13 @@ public class ContentAdapter extends BaseAdapter {
 
         dls.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 String userId = bean.getItems().get(position).getTelephone();
                 String username = bean.getItems().get(position).getName();
+                if (userId.equals(EMClient.getInstance().getCurrentUser())) {
+                    Toast.makeText(context, "不能和自己聊天", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent intent = new Intent(context, ChatActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("username", username);

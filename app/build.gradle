@@ -34,4 +34,5 @@ dependencies {
     compile project(':easeui')
     compile files('libs/parse-android-1.13.0.jar')
     compile files('libs/bolts-tasks-1.4.0.jar')
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
 }

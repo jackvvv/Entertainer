@@ -37,6 +37,7 @@ import sinia.com.entertainer.base.BaseActivity;
 import sinia.com.entertainer.fragment.ArtFragment;
 import sinia.com.entertainer.fragment.Homefragment;
 import sinia.com.entertainer.fragment.MessageFragment;
+import sinia.com.entertainer.fragment.MessageFragment1;
 import sinia.com.entertainer.fragment.MineFragment;
 import sinia.com.entertainer.utils.ActivityManager;
 import sinia.com.entertainer.utils.KickBackAnimator;
@@ -71,7 +72,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private long exitTime = 0;
     private Homefragment hf;
     private ArtFragment af;
-    private MessageFragment msf;
+    private MessageFragment1 msf;
     private MineFragment mf;
 
     private ViewPager vp;
@@ -92,7 +93,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void initView() {
         vp = (ViewPager) findViewById(R.id.vp);
         hf = new Homefragment();
-        msf = new MessageFragment();
+        msf = new MessageFragment1();
         af = new ArtFragment();
         mf = new MineFragment();
         pagers = new ArrayList<Fragment>();

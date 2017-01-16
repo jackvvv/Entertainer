@@ -180,15 +180,15 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     }
 
     protected void setUpView() {
-//        titleBar.setTitle(toChatUsername);
-        titleBar.setTitle(nickName);
+        titleBar.setTitle(toChatUsername);
+//        titleBar.setTitle(nickName);
         if (chatType == EaseConstant.CHATTYPE_SINGLE) {
             // set title
             if (EaseUserUtils.getUserInfo(toChatUsername) != null) {
                 EaseUser user = EaseUserUtils.getUserInfo(toChatUsername);
                 if (user != null) {
-//                    titleBar.setTitle(user.getNick());
-                    titleBar.setTitle(nickName);
+                    titleBar.setTitle(user.getNick());
+//                    titleBar.setTitle(nickName);
                 }
             }
             titleBar.setRightImageResource(R.drawable.ease_mm_title_remove);

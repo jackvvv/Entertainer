@@ -146,9 +146,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 }
                 // 异步获取当前用户的昵称和头像(从自己服务器获取，demo使用的一个第三方服务)
                 DemoHelper.getInstance().getUserProfileManager().asyncGetCurrentUserInfo(HXusername,HXheadImage);
-//                PreferenceManager.getInstance().setCurrentUserNick(phone);
                 DemoHelper.getInstance().getUserProfileManager().updateCurrentUserNickName(HXusername);
-//                DemoHelper.getInstance().getUserProfileManager().uploadUserAvatar(HXheadImage.getBytes());
                 DemoHelper.getInstance().setCurrentUserName(phone); // 环信Id
 
                 SharedPreferencesUtils.putShareValue(LoginActivity.this, "name", HXusername);

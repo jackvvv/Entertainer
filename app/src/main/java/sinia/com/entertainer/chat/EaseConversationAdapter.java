@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.hyphenate.chat.EMChatManager;
 import com.hyphenate.chat.EMChatRoom;
 import com.hyphenate.chat.EMClient;
@@ -36,8 +37,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import sinia.com.entertainer.Constant;
+import sinia.com.entertainer.utils.SharedPreferencesUtils;
 
+import static sinia.com.entertainer.R.id.imageView;
 import static sinia.com.entertainer.utils.MyApplication.context;
 
 /**
@@ -160,8 +164,13 @@ public class EaseConversationAdapter extends ArrayAdapter<EMConversation> {
             holder.name.setText(room != null && !TextUtils.isEmpty(room.getName()) ? room.getName() : username);
             holder.motioned.setVisibility(View.GONE);
         } else {
-            EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
-            EaseUserUtils.setUserNick(username, holder.name);
+            String nick = SharedPreferencesUtils.getShareString(getContext(), username).split(";")[0];
+            String img = SharedPreferencesUtils.getShareString(getContext(), username).split(";")[1];
+//            EaseUserUtils.setUserAvatar(getContext(), username, holder.avatar);
+//            EaseUserUtils.setUserNick(username, holder.name);
+            holder.name.setText(nick);
+            Glide.with(context).load(img).bitmapTransform(new CropCircleTransformation(getContext()))
+                    .crossFade(500).into(holder.avatar);
             holder.motioned.setVisibility(View.GONE);
         }
 

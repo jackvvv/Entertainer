@@ -41,6 +41,7 @@ import sinia.com.entertainer.bean.PersonInfBean;
 import sinia.com.entertainer.chat.ChatActivity;
 import sinia.com.entertainer.utils.Constants;
 import sinia.com.entertainer.utils.MyApplication;
+import sinia.com.entertainer.utils.SharedPreferencesUtils;
 import sinia.com.entertainer.utils.Utils;
 import sinia.com.entertainer.view.MyScrollView;
 
@@ -358,6 +359,7 @@ public class DetailedInformationActivity extends BaseActivity implements View.On
             case R.id.tv_btn1:
                 String userId = bean.getTelephone();
                 String username = bean.getUserName();
+                String img = bean.getImageUrl();
                 if (userId.equals(EMClient.getInstance().getCurrentUser())) {
                     Toast.makeText(context, "不能和自己聊天", Toast.LENGTH_SHORT).show();
                     return;
@@ -365,6 +367,7 @@ public class DetailedInformationActivity extends BaseActivity implements View.On
                 Intent intent = new Intent(this, ChatActivity.class);
                 intent.putExtra("userId", userId);
                 intent.putExtra("username", username);
+                SharedPreferencesUtils.putShareValue(DetailedInformationActivity.this, userId, username + ";" + img);
                 startActivity(intent);
                 break;
             case R.id.tv_btn2:
